@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+ import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Row, Col } from 'react-bootstrap';
+import Home from "./pages/Home.jsx"
+import PayAzam from './pages/PayAzam';
+import BankCheckout from './pages/BankCheckout';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Row className="mb-4">
+			
+			<Col>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					
+					<Route path="/payments" element={<PayAzam />} />
+					<Route path="/banks" element={<BankCheckout/>} />
+				</Routes>
+			</Col>
+		</Row>
+	);
 }
 
 export default App;
